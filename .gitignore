@@ -6,3 +6,13 @@ dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/.idea/.gitignore
+/.idea/checkstyle-idea.xml
+/.idea/compiler.xml
+/mcp_cloud_tester.js
+/.idea/misc.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/test_cloud_final.js
+/test_cloud_full.js
+/test_connectivity.js
+/.idea/vcs.xml
