@@ -131,10 +131,39 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 });
 
 /**
- * 启动逻辑：智能双模切换
+ * 启动逻辑：支持命令行参数和环境变量
  */
 async function main() {
-  const PORT = process.env.PORT || null;
+  const args = process.argv.slice(2);
+  const helpFlag = args.includes("--help") || args.includes("-h");
+  const versionFlag = args.includes("--version") || args.includes("-v");
+  const portArgIndex = args.indexOf("--port");
+  const portArg = portArgIndex !== -1 ? args[portArgIndex + 1] : null;
+
+  if (helpFlag) {
+    console.log(`
+VanBlog Manager MCP Server
+用法: vanblog-manager-mcp [选项]
+
+选项:
+  -h, --help     显示帮助信息
+  -v, --version  显示版本号
+  --port <number> 以 SSE 模式启动并监听指定端口 (默认使用环境变量 PORT)
+
+环境变量:
+  VANBLOG_URL    VanBlog 站点地址 (默认: https://lcqgy.top)
+  VANBLOG_TOKEN  VanBlog API 令牌 (必需)
+  PORT           SSE 模式下的监听端口
+    `);
+    process.exit(0);
+  }
+
+  if (versionFlag) {
+    console.log("vanblog-manager-mcp v3.2.0");
+    process.exit(0);
+  }
+
+  const PORT = portArg || process.env.PORT || null;
 
   if (PORT) {
     // 🌍 远程模式 (HTTP/SSE)
