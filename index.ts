@@ -25,7 +25,7 @@ const apiClient = axios.create({
 
 const server = new Server(
   {
-    name: "vblog-manager-universal",
+    name: "vanblog-manager",
     version: "3.2.0",
   },
   {

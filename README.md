@@ -1,6 +1,6 @@
-# 🚀 vblog-manager-mcp
+# 🚀 vanblog-manager-mcp
 
-> **VBlog Manager MCP (Universal Edition)** - 您的 AI 驱动博客管理管家。
+> **VanBlog Manager MCP (Universal Edition)** - 您的 AI 驱动博客管理管家。
 
 这是一个基于 [Model Context Protocol (MCP)](https://modelcontextprotocol.io) 的服务器，专门为 VBlog/VanBlog 系统定制。它让您可以通过 Gemini CLI 或任何支持 MCP 的客户端，直接用自然语言管理您的博客。
 
