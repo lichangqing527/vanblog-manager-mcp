@@ -53,6 +53,43 @@ npm test
 
 ---
 
+## 📦 MCP 客户端安装
+
+### Claude Desktop / Claude Code
+
+```bash
+claude mcp add vanblog-manager --scope user -- npx -y github:lichangqing527/vanblog-manager-mcp
+```
+
+然后在配置文件中设置环境变量：
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "vanblog-manager": {
+      "command": "npx",
+      "args": ["-y", "github:lichangqing527/vanblog-manager-mcp"],
+      "env": {
+        "VANBLOG_URL": "https://your-blog.com",
+        "VANBLOG_TOKEN": "your_token_here"
+      }
+    }
+  }
+}
+```
+
+### Gemini CLI
+
+```bash
+gemini mcp add -s user vanblog-manager -e VANBLOG_URL="https://your-blog.com" -e VANBLOG_TOKEN="your_token_here" -- npx -y github:lichangqing527/vanblog-manager-mcp
+```
+
+> 💡 **提示**: 将 `your_token_here` 替换为您的 VanBlog Token。
+
+---
+
 ## 🧰 工具清单 (Tools)
 
 | 工具名称 | 功能描述 | 示例指令 |
